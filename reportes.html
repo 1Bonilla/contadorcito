@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contadorcito - Reportes</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="dashboard.html">Inicio</a>
+            <a href="empresas.html">Empresas</a>
+            <a href="comprobantes_compras.html">Compras</a>
+            <a href="comprobantes_ventas.html">Ventas</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="logout.php">Cerrar Sesión</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <h1>Generar Reportes</h1>
+        <form action="backend.php" method="POST">
+            <input type="hidden" name="action" value="generar_reporte">
+        
+            <label for="empresa">Empresa</label>
+            <select id="empresa" name="empresa">
+                <option value="">Todas</option>
+                <!-- Opciones generadas dinámicamente -->
+            </select>
+        
+            <label for="tipo_comprobante">Tipo de Comprobante</label>
+            <select id="tipo_comprobante" name="tipo_comprobante">
+                <option value="compras">Compras</option>
+                <option value="ventas">Ventas</option>
+            </select>
+        
+            <label for="fecha_inicio">Fecha Inicio</label>
+            <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+        
+            <label for="fecha_fin">Fecha Fin</label>
+            <input type="date" id="fecha_fin" name="fecha_fin" required>
+        
+            <button type="submit">Generar Reporte</button>
+        </form>
+        
+        <div id="mensaje"></div>
+        
+    </div>
+</body>
+</html>
